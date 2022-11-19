@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th scope="col">Imagen</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Talle</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let zapatilla of zapatillas" [ngClass]="{'descuento': zapatilla.descuento}">
+        <td><img class="imagenZapatillas" [src]="zapatilla.imagen" alt="zapatilla.nombre"></td>
+        <td class="infoZapatillas">{{zapatilla.nombre}}</td>
+        <td class="infoZapatillas">{{zapatilla.marca}}</td>
+        <td class="infoZapatillas">{{zapatilla.talle}}</td>
+        <td class="infoZapatillas">{{zapatilla.precio | currency}}</td>
+        <td *ngIf="zapatilla.stock==0" class="infoZapatillas">Sin stock</td>
+        <td *ngIf="zapatilla.stock!=0" class="infoZapatillas">Hay stock!</td>
+      </tr>
+    </tbody>
+  </table>
