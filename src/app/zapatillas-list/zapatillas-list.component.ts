@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ZapatillasCartService } from '../zapatillas-cart.service';
+import { ZapatillasDataService } from '../zapatillas-data.service';
 import { Zapatillas } from './zapatillas';
 
 @Component({
@@ -9,38 +11,33 @@ import { Zapatillas } from './zapatillas';
 
 export class ZapatillasListComponent implements OnInit {
   
-    zapatillas : Zapatillas [] = [
-    {
-      nombre: "Nike Air Force 1" ,
-      marca: "Nike" ,
-      talle: "42" ,
-      precio: 25000,
-      stock: 2,
-      imagen: "assets/imagenes/nikeAirForce1.png", 
-      descuento: true,
-    }, 
-    {
-      nombre: "Jhon Foos Black Claw" ,
-      marca: "Jhon Foos" ,
-      talle: "40-41-42" ,
-      precio: 20000,
-      stock: 5,
-      imagen: "assets/imagenes/nikeAirForce1.png", 
-      descuento: false,
-    },
-    {
-      nombre: "Adidas All Black" ,
-      marca: "Adidas" ,
-      talle: "40-42" ,
-      precio: 15000,
-      stock: 3,
-      imagen: "assets/imagenes/nikeAirForce1.png", 
-      descuento: false,
-    },
-]
-  constructor() { }
+  zapatillas : Zapatillas [] = [];
 
-  ngOnInit(): void {
+constructor(
+  private carrito : ZapatillasCartService,
+  private zapatillasDataService: ZapatillasDataService) { 
+}
+
+ngOnInit(): void {
+  this.zapatillasDataService.traerTodo()
+  .subscribe(zapatillas => this.zapatillas = zapatillas);
+}
+
+aumentarCantidad(zapatilla : Zapatillas) {
+  if (zapatilla.cantidad <= zapatilla.stock) {
+    zapatilla.cantidad++;
   }
+}
+
+bajarCantidad(zapatilla : Zapatillas) {
+  if (zapatilla.cantidad > 0) {
+    zapatilla.cantidad--;
+  }
+}
+agregarAlCarrito(zapatillas: any) : void {
+  this.carrito.agregarAlCarrito(zapatillas);
+  zapatillas.stock -= zapatillas.cantidad;
+  zapatillas.cantidad = 0;     
+}
 
 }

@@ -1,7 +1,7 @@
 <table class="table table-striped">
     <thead>
       <tr>
-          <th scope="col">Imagen</th>
+        <th scope="col">Imagen</th>
         <th scope="col">Nombre</th>
         <th scope="col">Marca</th>
         <th scope="col">Talle</th>
@@ -18,6 +18,14 @@
         <td class="infoZapatillas">{{zapatilla.precio | currency}}</td>
         <td *ngIf="zapatilla.stock==0" class="infoZapatillas">Sin stock</td>
         <td *ngIf="zapatilla.stock!=0" class="infoZapatillas">Hay stock!</td>
+        <td class="infoZapatillas">
+          <div class="d-inline-grid">
+            <button type="button" class="btn btn-default btn-xs bg-white" (click)="bajarCantidad(zapatilla)">-</button>
+            <span class="mx-1">{{zapatilla.cantidad}}</span>
+            <button type="button" class="btn btn-default btn-xs bg-white" (click)="aumentarCantidad(zapatilla)">+</button>
+            <button class=" btn mt-1" (click)="agregarAlCarrito(zapatilla)">Agregar al carrito</button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -1,0 +1,14 @@
+<ul style="list-style-type: none;">
+  <h2>Carrito</h2>
+    <li style="list-style-type: none;" *ngFor="let zapatilla of (carritoLista$ | async)">
+        <div class="card my-1" style="width: 18rem;">
+            <div class="card-header justify-content-center">
+              {{zapatilla.nombre}}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cantidad: {{zapatilla.cantidad}}</li>
+            </ul>
+          </div>
+    </li>
+</ul>
+

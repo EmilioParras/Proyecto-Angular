@@ -6,4 +6,10 @@ export interface Zapatillas {
     stock: number;
     imagen : string;
     descuento: boolean;
+    cantidad: number;
+}
+
+export interface ZapatillaItem {
+    cantidad: number;
+    
 }

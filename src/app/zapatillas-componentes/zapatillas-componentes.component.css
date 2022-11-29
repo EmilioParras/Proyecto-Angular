@@ -1,0 +1,10 @@
+.imagenZapatillas {
+    height: 75px;
+    width: 100px;
+}
+.descuento {
+    background-color: rgba(7, 243, 7, 0.747);
+}
+td {
+ vertical-align: middle;
+}
