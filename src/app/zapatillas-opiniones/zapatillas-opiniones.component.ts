@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ZapatillasDataOpinionesService } from '../zapatillas-data-opiniones.service';
-import { Opiniones } from './opiniones';
+import { ZapatillasOpinionesService } from '../zapatillas-data-opiniones.service';
+import { Opiniones } from './Opiniones';
 
 @Component({
   selector: 'app-zapatillas-opiniones',
@@ -13,12 +13,13 @@ export class ZapatillasOpinionesComponent implements OnInit {
 
 
   constructor(
-    private ZapatillasDataOpinionesService: ZapatillasDataOpinionesService
-  ) { }
+    private ZapatillasOpinionesService: ZapatillasOpinionesService) {
+      
+     }
 
   ngOnInit(): void {
-    this.ZapatillasDataOpinionesService.traerTodo()
-  .subscribe(opiniones => this.opiniones = opiniones);
-  }
+    this.ZapatillasOpinionesService.traerOpiniones()
+   .subscribe(opiniones => this.opiniones = opiniones);
+      }
 
 }

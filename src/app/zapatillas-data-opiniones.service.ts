@@ -13,11 +13,9 @@ export class ZapatillasOpinionesService {
 
   constructor(private http: HttpClient) { }
 
-    public traerTodo(): Observable<Opiniones[]> {
-
+    public traerOpiniones(): Observable<Opiniones[]> {
       return this.http.get<Opiniones[]>(URL)
-         
-     }
-
+     
+    }
 }
 
