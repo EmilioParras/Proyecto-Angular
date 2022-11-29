@@ -1,7 +1,8 @@
-<ul style="list-style-type: none;">
-  <h2>Carrito</h2>
-    <li style="list-style-type: none;" *ngFor="let zapatilla of (carritoLista$ | async)">
-        <div class="card my-1" style="width: 18rem;">
+<div>
+  <ul style="list-style:none">
+    <h2 class="justify-content-center display:flex">Carrito</h2>
+    <li class="mt-2" style="list-style:none" *ngFor="let zapatilla of (carritoLista$ | async)">
+        <div class="card" style="width: 18rem;">
             <div class="card-header justify-content-center">
               {{zapatilla.nombre}}
             </div>
@@ -9,6 +10,6 @@
               <li class="list-group-item">Cantidad: {{zapatilla.cantidad}}</li>
             </ul>
           </div>
-    </li>
-</ul>
-
+    </li> 
+  </ul>
+</div>

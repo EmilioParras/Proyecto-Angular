@@ -13,31 +13,31 @@ export class ZapatillasListComponent implements OnInit {
   
   zapatillas : Zapatillas [] = [];
 
-constructor(
-  private carrito : ZapatillasCartService,
-  private zapatillasDataService: ZapatillasDataService) { 
-}
-
-ngOnInit(): void {
-  this.zapatillasDataService.traerTodo()
-  .subscribe(zapatillas => this.zapatillas = zapatillas);
-}
-
-aumentarCantidad(zapatilla : Zapatillas) {
-  if (zapatilla.cantidad <= zapatilla.stock) {
-    zapatilla.cantidad++;
+  constructor(
+    private carrito : ZapatillasCartService,
+    private zapatillasDataService: ZapatillasDataService) { 
   }
-}
 
-bajarCantidad(zapatilla : Zapatillas) {
-  if (zapatilla.cantidad > 0) {
-    zapatilla.cantidad--;
+  ngOnInit(): void {
+    this.zapatillasDataService.traerTodo()
+    .subscribe(zapatillas => this.zapatillas = zapatillas);
   }
-}
-agregarAlCarrito(zapatillas: any) : void {
-  this.carrito.agregarAlCarrito(zapatillas);
-  zapatillas.stock -= zapatillas.cantidad;
-  zapatillas.cantidad = 0;     
-}
+
+  aumentarCantidad(zapatilla : Zapatillas) {
+      if (zapatilla.cantidad <= zapatilla.stock) {
+        zapatilla.cantidad++;
+        }
+    }
+
+  bajarCantidad(zapatilla : Zapatillas) {
+      if (zapatilla.cantidad > 0) {
+        zapatilla.cantidad--;
+        }
+    }
+  agregarAlCarrito(zapatillas: any) : void {
+      this.carrito.agregarAlCarrito(zapatillas);
+      zapatillas.stock -= zapatillas.cantidad;
+      zapatillas.cantidad = 0;     
+    }
 
 }

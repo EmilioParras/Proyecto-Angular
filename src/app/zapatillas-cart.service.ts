@@ -21,6 +21,7 @@ export class ZapatillasCartService {
       item.cantidad += zapatillas.cantidad;
     }
     console.log(this._carritoLista);
+    console.log(zapatillas);
     this.carritoLista.next(this._carritoLista); 
   }
 

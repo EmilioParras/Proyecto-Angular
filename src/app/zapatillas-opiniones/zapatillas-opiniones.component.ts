@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ZapatillasDataOpinionesService } from '../zapatillas-data-opiniones.service';
-import { Opiniones } from './Opiniones';
+import { Opiniones } from './opiniones';
 
 @Component({
   selector: 'app-zapatillas-opiniones',

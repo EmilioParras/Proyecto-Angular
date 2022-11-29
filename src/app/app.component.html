@@ -19,13 +19,14 @@
             <a class="nav-link text-black" aria-current="page" [routerLink]="['/']">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="btn" [routerLink]="['about']" role="button" aria-expanded="false">Sobre nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn" [routerLink]="['opiniones']" role="button" aria-expanded="false">Opiniones</a>
-          </li>
+            <li class="nav-item active">
+              <a class="nav-link text-black" aria-current="page" [routerLink]="['sobre-nosotros']">Sobre nosotros</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-black" aria-current="page" [routerLink]="['opiniones']">Opiniones</a>
+            </li>
           </ul>
-          <a><img class="d-flex mx-3" width="70px" height="70px" alt="icono"></a>
+          <a><img class="d-flex mx-3" width="70px" height="70px" src="../assets/imagenes/icon.png" alt="icono"></a>
       </div>
     </div>
   </nav>

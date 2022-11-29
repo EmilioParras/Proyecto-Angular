@@ -1,0 +1,26 @@
+body {
+    background-color: blue
+}
+.container-m {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:20px;
+}
+.card {
+    background-color: rgb(6, 5, 5);
+    padding: 15px;
+    border: none;
+    height: 250px;
+    margin-top: 10px
+}
+.u-color {
+    color: rgb(0, 0, 0)
+}
+.user-image img {
+    border: 3px solid rgb(255, 255, 255);
+    padding: 2px
+}

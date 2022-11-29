@@ -1,13 +1,14 @@
-<div class="container-m">
+<div class="container-m justify-content-center">
     <div class="row">
-        <div class="col-md-12 mt-2 bg-secondary border border-white rounded" *ngFor="let opinion of opiniones" >
+        <div *ngFor="let opinion of opiniones" class="mt-2 col-md-4">
+            <div class="card bg-secondary"> <i class="fa fa-quote-left u-color"></i>
                 <p class="text-white">{{opinion.opinion}}</p>
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="user-about"> 
-                        <span class="font-weight-bold d-block text-white">{{opinion.nombre}}</span>
+                    <div class="user-about"> <span class="font-weight-bold d-block text-white">{{opinion.nombre}}</span>
                     </div>
-                    <div class="user-image my-2"> <img src="https://i.imgur.com/UUW3zLx.jpg" class="rounded-circle" width="70"> </div>
+                    <div class="user-image"> <img src="https://i.imgur.com/o5uMfKo.jpg" class="rounded-circle" width="70"> </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

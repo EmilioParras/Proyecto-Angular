@@ -15,7 +15,7 @@ const routes : Routes = [
     component: ZapatillasComponentesComponent
   },
   {
-    path: 'about',
+    path: 'sobre-nosotros',
     component:  ZapatillasAboutComponent
   },
   {

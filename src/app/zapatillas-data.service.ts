@@ -8,6 +8,7 @@ const URL = 'https://62b323824f851f87f4552755.mockapi.io/api/zapatillas/apiPrueb
 @Injectable({
   providedIn: 'root'
 })
+
 export class ZapatillasDataService {
 
   constructor(private http: HttpClient) { }
